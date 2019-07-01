@@ -6,6 +6,9 @@ const count = (state = 0, action) => {
         case "decrease": {
             return state - 1;
         }
+        case "asyncIncrease": {
+            return  state + 2;
+        }
         default:
             return state;
     }

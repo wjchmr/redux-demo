@@ -1,5 +1,5 @@
 export default ({dispatch,getState}) => (next) => (action) => {
-    console.log(`${typeof action}：：：：`, action)
+    console.log(`thunk2 next:::`, next)
     if(typeof action === 'function'){
         action(dispatch,getState)
     }else{

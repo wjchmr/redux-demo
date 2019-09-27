@@ -6,6 +6,7 @@ import * as actions from "../redux/actions";
 class Count extends Component {
     render() {
         const { count, increase, decrease, asyncIncrease } = this.props;
+        console.log(this.props.dispatch)
         return (
             <div>
                 <div>
@@ -29,12 +30,12 @@ export default connect(
     state => ({ count: state.count }),
     (dispatch, ownProps) => {
         console.log(ownProps);
-        // return {
-        //     increase: () => dispatch(increase()),
-        //     decrease: () => dispatch(decrease()),
-        //     asyncIncrease: () => dispatch(asyncIncrease())
-        // };
-        return { ...bindActionCreators(actions, dispatch) };
+        return {
+            increase: () => dispatch(actions.increase()),
+            decrease: () => dispatch(actions.decrease()),
+            asyncIncrease: () => dispatch(actions.asyncIncrease())
+        };
+        // return { ...bindActionCreators(actions, dispatch) };
     }
     // { increase, decrease, asyncIncrease }//简洁写法，用actions对象作为connect的第二个参数
 )(Count);

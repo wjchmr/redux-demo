@@ -8,7 +8,7 @@ import Count from './components/Count'
 
 ReactDOM.render(
     <Provider store={store}>
-        <Count name='text'/>
+        <Count />
     </Provider>,
     document.getElementById("root")
 );
